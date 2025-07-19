@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+rp_one2many_limit.access_x2many_limit,access_x2many_limit,rp_one2many_limit.model_x2many_limit,base.group_user,1,1,1,1

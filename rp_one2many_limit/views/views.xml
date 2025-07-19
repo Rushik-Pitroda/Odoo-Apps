@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+          <record id="xtomany_limit_action" model="ir.actions.act_window">
+            <field name="name">Set Limit For Specific Model</field>
+            <field name="res_model">x2many.limit</field>
+            <field name="view_mode">list,form</field>
+          </record>
+
+          <record id="xtomany_limit_tree" model="ir.ui.view">
+            <field name="name">x2many.limit.view.tree</field>
+            <field name="model">x2many.limit</field>
+            <field name="arch" type="xml">
+              <list>
+                  <field name="models_name"/>
+                  <field name="limit"/>
+                  <field name="fields_list" widget="many2many_tags" />
+              </list>
+            </field>
+          </record>
+
+          <record id="xtomany_limit_form" model="ir.ui.view">
+            <field name="name">x2many.limit.view.form</field>
+            <field name="model">x2many.limit</field>
+            <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <group>
+                        <group string="Select Model">
+                          <field name="models_name"/>
+                          <field name="limit"/>
+                        </group>
+                        <group string="Set Fields">
+                          <field name="fields_list" widget="many2many_tags" domain="fields_list_domain"/>
+                        </group>
+                      </group>
+                  </sheet>
+              </form>
+            </field>
+          </record>
+
+          <menuitem id="xtomany_limit_menu"
+            web_icon="rp_one2many_limit,static/description/icon.png"
+            name="One2Many Limit"
+            action="xtomany_limit_action"
+            sequence="10"/>
+          
+  </data>
+</odoo>
